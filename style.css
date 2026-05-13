@@ -1,0 +1,355 @@
+/* Reset & Font */
+body{
+margin:0;
+font-family:Arial, sans-serif;
+
+background: linear-gradient(135deg,#fff3a0,#ffd54f,#ffca28);
+
+min-height:100vh;
+}
+
+/* Blur overlay */
+.blur-overlay{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  backdrop-filter: blur(4px);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* Container */
+.container{
+  margin-top: 100px;
+  position: relative;
+  z-index:1;
+}
+
+h1{
+  font-size: 52px;
+  font-weight: 700;
+  color: #2d3436;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+p{
+  font-size: 22px;
+  color: #636e72;
+  margin-bottom: 40px;
+}
+
+/* Buttons */
+.buttons button{
+  padding: 18px 35px;
+  margin: 15px;
+  font-size: 18px;
+  border-radius: 25px;
+  border: 2px solid #dfe6e9;
+  cursor: pointer;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.buttons button:hover{
+  background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+  transform: scale(1.1) rotate(-3deg);
+  border-color: #ffeaa7;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Quotes */
+.result{
+  margin-top: 50px;
+}
+
+#quote{
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #2d3436;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out, text-shadow 1s ease-in-out;
+  transform: translateY(20px);
+}
+
+#quote.show{
+  opacity: 1;
+  transform: translateY(0);
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.25), 0 0 10px rgba(255,255,255,0.15);
+}
+
+/* Music Link */
+a{
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #2d3436;
+  display: inline-block;
+  margin-top: 10px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+a:hover{
+  color: #fd79a8;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+}
+
+/* Mood Gradients */
+body.mood-happy {
+  background: linear-gradient(135deg, #ffeaa7, #fab1a0, #ffeaa7);
+  background-size: 300% 300%;
+  animation: gradient 12s ease infinite;
+}
+body.mood-sad {
+  background: linear-gradient(135deg, #74b9ff, #a29bfe, #74b9ff);
+  background-size: 300% 300%;
+  animation: gradient 12s ease infinite;
+}
+body.mood-motivated {
+  background: linear-gradient(135deg, #ff7675, #fd79a8, #ff7675);
+  background-size: 300% 300%;
+  animation: gradient 12s ease infinite;
+}
+body.mood-relaxed {
+  background: linear-gradient(135deg, #55efc4, #81ecec, #55efc4);
+  background-size: 300% 300%;
+  animation: gradient 12s ease infinite;
+}
+
+@keyframes gradient{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Floating Emojis */
+.emoji{
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.8;
+}
+
+@keyframes float{
+  0%{transform: translateY(0) rotate(0deg); opacity:1;}
+  100%{transform: translateY(-500px) rotate(360deg); opacity:0;}
+}
+
+/* Responsive */
+@media screen and (max-width:600px){
+  h1{ font-size: 42px; }
+  p{ font-size: 18px; }
+  .buttons button{ font-size:16px; padding: 12px 22px; }
+  #quote{ font-size:24px; }
+}
+
+
+.login-page, .signup-page {
+  background: linear-gradient(135deg, #ffefba, #ffffff);
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.blur-overlay {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  backdrop-filter: blur(8px);
+  z-index:0;
+}
+
+.musical-symbols {
+  position: fixed;
+  top: 0; left:0;
+  width:100%; height:100%;
+  z-index:0;
+  font-size: 30px;
+  color: rgba(0,0,0,0.05);
+}
+
+.musical-symbols span {
+  position: absolute;
+  animation: floatSymbols 20s linear infinite;
+}
+
+@keyframes floatSymbols {
+  0% {transform: translateY(100vh) rotate(0deg);}
+  100% {transform: translateY(-100vh) rotate(360deg);}
+}
+
+.login-container, .signup-container {
+  max-width: 400px;
+  margin: 120px auto;
+  padding: 40px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  z-index:1;
+  position: relative;
+}
+
+.login-container h1, .signup-container h1 {
+  margin-bottom: 30px;
+  font-size: 42px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+}
+
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 12px;
+  border: 1px solid #dfe6e9;
+  font-size: 16px;
+}
+
+button.btn-login, button.btn-signup {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  margin-top: 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button.btn-login:hover, button.btn-signup:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+}
+
+p { margin-top: 20px; font-size: 16px; }
+p a { color: #fd79a8; text-decoration: none; font-weight: 600; }
+p a:hover { text-decoration: underline; }
+
+/* Reset & Font */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  text-align: center;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* soft gradient */
+  position: relative;
+}
+
+/* Musical Symbols Watermark */
+.musical-symbols {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  font-size: 60px;
+  color: rgba(255, 255, 255, 0.05); /* subtle watermark */
+  z-index:0;
+  pointer-events:none;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Containers */
+.login-container, .signup-container {
+  position: relative;
+  z-index:1;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Headings */
+.login-container h1, .signup-container h1 {
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.login-container input, .signup-container input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Buttons */
+.login-container button, .signup-container button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.login-container button:hover, .signup-container button:hover {
+  transform: scale(1.05);
+}
+
+/* Links */
+.login-container p a, .signup-container p a {
+  text-decoration: none;
+  color: #0984e3;
+  font-weight: 600;
+}
+
+.login-container p a:hover, .signup-container p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media screen and (max-width:600px){
+  .login-container, .signup-container {
+    margin: 50px 20px;
+  }
+}
+
+
+
+/*watermark design*/
+/* Full page musical symbols watermark */
+.musical-symbols {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* behind everything */
+  pointer-events: none; /* clickable elements block হবে না */
+  overflow: hidden;
+}
+
+/* Individual symbols will float */
+.musical-symbols span {
+  position: absolute;
+  font-size: 40px; /* adjust size */
+  color: rgba(255,255,255,0.05); /* subtle watermark */
+  user-select: none;
+  animation-name: floatSymbols;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Keyframes for float animation */
+@keyframes floatSymbols {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}

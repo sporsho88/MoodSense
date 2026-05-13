@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MoodSense</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+if(!localStorage.getItem("currentUser")){
+  window.location.href="login.html";
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="topbar">
+  <span>Welcome, <b id="showUser"></b></span>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div class="container">
+
+<h1>MoodSense</h1>
+<p>Select your mood</p>
+
+<div class="buttons">
+  <button onclick="setMood('happy')">😊 Happy</button>
+  <button onclick="setMood('sad')">😢 Sad</button>
+  <button onclick="setMood('motivated')">🔥 Motivated</button>
+  <button onclick="setMood('relaxed')">🌿 Relaxed</button>
+</div>
+
+<div class="result">
+  <h2 id="quote">Your quote</h2>
+  <a id="music" target="_blank">Music</a>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

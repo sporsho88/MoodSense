@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#a8edea,#fed6e3);
+overflow:hidden;
+position:relative;
+
+}
+
+/* Musical Symbols */
+
+body::before{
+content:"♪ ♫ ♬ ♩";
+position:absolute;
+font-size:130px;
+color:rgba(0,0,0,0.05);
+top:10%;
+left:5%;
+transform:rotate(-20deg);
+}
+
+body::after{
+content:"♫ ♪ ♬ ♩";
+position:absolute;
+font-size:150px;
+color:rgba(0,0,0,0.05);
+bottom:10%;
+right:10%;
+transform:rotate(20deg);
+}
+
+.symbol1{
+position:absolute;
+font-size:120px;
+color:rgba(0,0,0,0.05);
+top:45%;
+left:15%;
+transform:rotate(15deg);
+}
+
+.symbol2{
+position:absolute;
+font-size:110px;
+color:rgba(0,0,0,0.05);
+top:25%;
+right:15%;
+transform:rotate(-10deg);
+}
+
+.symbol3{
+position:absolute;
+font-size:130px;
+color:rgba(0,0,0,0.05);
+bottom:35%;
+left:20%;
+transform:rotate(25deg);
+}
+
+/* Login Box */
+
+.login-box{
+
+width:350px;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+text-align:center;
+z-index:1;
+
+}
+
+.login-box h2{
+margin-bottom:25px;
+}
+
+input{
+
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+
+}
+
+button{
+
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+background:#6c63ff;
+color:white;
+font-size:16px;
+cursor:pointer;
+
+}
+
+button:hover{
+background:#4d47c3;
+}
+
+.signup{
+
+margin-top:15px;
+
+}
+
+.signup a{
+
+text-decoration:none;
+color:#6c63ff;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="symbol1">♪ ♫</div>
+<div class="symbol2">♬ ♩</div>
+<div class="symbol3">♫ ♪</div>
+
+<div class="login-box">
+
+<h2>Login</h2>
+
+<input type="text" placeholder="Username">
+
+<input type="password" placeholder="Password">
+
+<button onclick="goHome()">Login</button>
+
+<div class="signup">
+Don't have an account? <a href="signup.html">Sign up</a>
+</div>
+
+</div>
+
+<script>
+
+function goHome(){
+window.location.href="index.html";
+}
+
+</script>
+
+</body>
+</html>
